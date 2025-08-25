@@ -1,0 +1,15 @@
+/target
+/lib
+/classes
+/checkouts
+pom.xml
+test-config.edn
+*.jar
+*.class
+/.lein-*
+profiles.clj
+/.env
+.nrepl-port
+
+/node_modules
+/log
