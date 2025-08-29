@@ -10,12 +10,12 @@
     clj-kondo
     cljfmt
     babashka
-    leiningen
+    (leiningen.override { jdk = pkgs.temurin-bin-21; })
     cacert
   ];
 
   env = {
-    LEIN_JAVA_CMD = "${pkgs.temurin-bin-21}/bin/java";
+    # LEIN_JAVA_CMD = "${pkgs.temurin-bin-21}/bin/java";
   };
 
   languages = {

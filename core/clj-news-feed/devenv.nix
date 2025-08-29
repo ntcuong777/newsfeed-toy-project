@@ -10,11 +10,15 @@
     clj-kondo
     cljfmt
     babashka
-    leiningen
+    (leiningen.override { jdk = pkgs.temurin-bin-21; })
   ];
 
   languages = {
     clojure.enable = true;
+    java = {
+      enable = true;
+      jdk.package = pkgs.temurin-bin-21;
+    };
   };
 
   # https://devenv.sh/languages/
