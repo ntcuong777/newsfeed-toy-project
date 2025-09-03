@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% include "register.html" %}
+  <h2>Hello {{name}}!</h2>
+  <p>This is a simple HTML page served by a Clojure web application.</p>
+  <ul>
+    {% for item in items %}
+      <li>{{item}}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
