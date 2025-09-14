@@ -31,7 +31,9 @@
                  [ring/ring-core "1.9.6"]
                  [ring/ring-defaults "0.3.4"]
                  [selmer "1.12.55"]
-                 [org.clojure/clojurescript "1.10.764" :scope "provided"]]
+                 [org.clojure/clojurescript "1.10.764" :scope "provided"]
+                 [reagent "1.0.0"]
+                 [cljs-ajax "0.8.1"]]
 
   :min-lein-version "2.0.0"
 
@@ -47,7 +49,7 @@
   :cljsbuild
   {:builds
    {:app {:source-paths ["src/cljs"]
-          :compiler {:output-to "taret/cljsbuild/public/js/app.js"
+          :compiler {:output-to "target/cljsbuild/public/js/app.js"
                      :output-dir "target/cljsbuild/public/js/out"
                      :main "guestbook.core"
                      :asset-path "/js/out"
