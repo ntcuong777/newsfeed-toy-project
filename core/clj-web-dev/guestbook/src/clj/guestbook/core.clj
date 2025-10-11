@@ -6,14 +6,17 @@
             [guestbook.config :refer [env]]
             [clojure.tools.cli :refer [parse-opts]]
             [clojure.tools.logging :as log]
-            [mount.core :as mount])
+            [mount.core :as mount]
+            [next.jdbc.date-time]
+            [next.jdbc.result-set :as rs])
   (:gen-class))
 
 ;; log uncaught exceptions in threads
 (Thread/setDefaultUncaughtExceptionHandler
  (reify
    Thread$UncaughtExceptionHandler
-   (uncaughtException [_ thread ex]
+   (uncaughtException
+     [_ thread ex]
      (log/error {:what :uncaught-exception,
                  :exception ex,
                  :where (str "Uncaught exception on" (.getName thread))}))))
